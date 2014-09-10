@@ -1,0 +1,31 @@
+<h1>Listing locations</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Street Name</th>
+    <th>Street Number</th>
+    <th>Twitter</th>
+    <th>Facebook URL</th>
+    <th>Category ID</th>
+    <th>Open?</th>
+  </tr>
+ 
+  <% @location.each do |location| %>
+    <tr>
+      <td><%= location.name %></td>
+      <td><%= location.streetnumber %></td>
+      <td><%= location.streetname %></td>
+      <td><%= location.twitter %></td>
+      <td><%= location.facebook %></td>
+      <td><%= location.category_ID %></td>
+      <td><%= location.open %></td>
+      <td><%= link_to 'Show me this', location_path(location) %></td>
+    <td><%= link_to 'Edit', edit_location_path(location) %></td>
+    <td><%= link_to 'Delete', location_path(location),
+                    method: :delete, data: { confirm: 'Are you sure you want to delete this?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<p><%= link_to 'Want to add another place?', new_location_path %></p>
+<p><%= link_to 'I want to see the categories we have' , categories_path %></P>

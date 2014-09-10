@@ -1,0 +1,7 @@
+<h1> Our Categories</h1>
+<% @category.each do |c| %>
+	<p><%= c.id %>              		<%= link_to c.name, category_path(c) %>   </p>
+	
+
+	<% end %>
+	<p><%= link_to 'Send me back to the list.', locations_path %></p>

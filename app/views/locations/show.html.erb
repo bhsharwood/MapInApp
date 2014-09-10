@@ -1,0 +1,50 @@
+<h1> Location Details</h1>
+
+<div id="locations">
+<p>
+  <ul>
+    <li class="Name">
+  <strong>Name:</strong>
+  <%= @location.name %>
+</li>
+</p>
+<p>
+  <li class="streetname"
+  <strong>Street Name:</strong>
+  <%= @location.streetname %>
+</li>
+</p>
+<p>
+  <li class="streetnumber">
+  <strong>Street Number:</strong>
+  <%= @location.streetnumber %>
+</li>
+</p>
+<p>
+  <li class="twitter">
+  <strong>Twitter Account:</strong>
+  <%= @location.twitter %>
+</li>
+</p>
+<p>
+  <li class="facebook">
+  <strong>FaceBook URL:</strong>
+  <%= @location.facebook %>
+</li>
+</p>
+<p>
+  <li class="category">
+  <strong>Category:</strong>
+  <%= @location.category_ID %>
+</li>
+</p>
+<p>
+  <li class="facebook">
+  <strong>Is it open?</strong>
+  <%= @location.open %>
+</li>
+</p>
+</ul>
+<p><%= link_to 'Add another!?', new_location_path %></P>
+<p><%= link_to 'Send me back to the list.', locations_path %></p>
+<p><%= link_to "Edit this one", edit_location_path %></p>

@@ -1,0 +1,42 @@
+<%= form_for :location, url: locations_path do |f| %>
+ <% if @location.errors.any? %>
+  <div id="error_explanation">
+    <h3><%= pluralize(@location.errors.count, "error") %> prohibited
+      this location from being saved:</h3>
+    <ul>
+    <% @location.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label "What is the store name?" %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+  <%= f.select :streetname, [ 'Ossington', 'Dundas', 'Dovercourt', 'Foxley', 'Humbert' ], :prompt => :streetname %>
+  </p>
+  <p>
+    <%= f.label "What number is the place on the street?" %><br>
+    <%= f.text_field :streetnumber %>
+  </p>
+  <p>
+    <%= f.label "What is their twitter ID" %><br>
+    <%= f.text_field :twitter %>
+
+  </p>
+    <p>
+    <%= f.label "What is their FaceBook ID" %><br>
+    <%= f.text_field :facebook %>
+  </p>
+<p>
+ <%= f.label "Is the place open?" %><br>
+<%= f.select :open, options_for_select([["Yes", true], ["No", false]],) %>
+
+  </p>
+  <p>
+    <%= f.submit "Ya, Throw this to the database" %>
+  </p>
+<% end %>
